@@ -13,18 +13,6 @@ const adminSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    age: {
-        type: Number
-        , required: true
-    },
-    image: {
-        type: String
-        , required: true
-    },
-    status: {
-        type: Boolean,
-        default: false
-    },
     token: {
         type: String,
         default: ''
