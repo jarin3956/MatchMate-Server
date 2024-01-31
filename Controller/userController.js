@@ -34,6 +34,7 @@ const verifyHash = async  (password,hash) => {
 const userRegister = async (req, res) => {
     try {
         const { name,email,password,age } = req.body;
+        console.log(name,email,password,age);
         const userFound = await userData.findOne({ email:email });
         if (userFound) {
             res.status(409).json({message:'Email already used'})
