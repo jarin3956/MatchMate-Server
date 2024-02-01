@@ -14,8 +14,8 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     age: {
-        type: Number
-        , required: true
+        type: Number,
+        required: true
     },
     status: {
         type: Boolean,
