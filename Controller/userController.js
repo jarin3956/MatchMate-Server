@@ -10,6 +10,19 @@ const userRegister = async (req, res) => {
     }
 }
 
+const userLogin = async (req,res) => {
+    try {
+        const {email,password} = req.body;
+        console.log(email,password);
+        const result = await userService.loginUser(email,password);
+        res.status(result.status).json({ message: result.message, user: result.token });
+        
+    } catch (error) {
+        res.status(500).json({ message: 'Internal server error', error });
+    }
+}
+
 module.exports = {
-    userRegister
+    userRegister,
+    userLogin
 };
