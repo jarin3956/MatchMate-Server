@@ -15,7 +15,7 @@ const userLogin = async (req,res) => {
         const {email,password} = req.body;
         console.log(email,password);
         const result = await userService.loginUser(email,password);
-        res.status(result.status).json({ message: result.message, user: result.token });
+        res.status(result.status).json({ message: result.message, user: result.user });
         
     } catch (error) {
         res.status(500).json({ message: 'Internal server error', error });
